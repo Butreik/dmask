@@ -8,10 +8,10 @@ public class Assert {
     }
 
     public static <T> T assertNotNull(T object) {
-        if (object != null) {
-            return object;
+        if (object == null) {
+            throw new AssertException("Object required to be not null");
         }
-        throw new AssertException("Object required to be not null");
+        return object;
     }
 
     public static String assertNotEmpty(String string) {

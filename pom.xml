@@ -227,7 +227,7 @@
 
     <properties>
         <jdk.version>11</jdk.version>
-        <jdk-test.version>15</jdk-test.version>
+        <jdk-test.version>11</jdk-test.version>
         <maven.compiler.source>${jdk.version}</maven.compiler.source>
         <maven.compiler.target>${jdk.version}</maven.compiler.target>
         <maven.compiler.testSource>${jdk-test.version}</maven.compiler.testSource>

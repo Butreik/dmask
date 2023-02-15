@@ -4,7 +4,9 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-import static com.butreik.dmask.core.validate.Assert.*;
+import static com.butreik.dmask.core.validate.Assert.assertNotEmpty;
+import static com.butreik.dmask.core.validate.Assert.assertNotNull;
+import static com.butreik.dmask.core.validate.Assert.assertTrue;
 
 public class ReplaceMiddleCharactersMaskers extends AbstractStringMasker {
 
