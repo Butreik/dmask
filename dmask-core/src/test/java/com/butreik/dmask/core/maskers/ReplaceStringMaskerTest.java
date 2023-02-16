@@ -1,6 +1,5 @@
 package com.butreik.dmask.core.maskers;
 
-import com.butreik.dmask.core.validate.AssertException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -43,6 +42,6 @@ public class ReplaceStringMaskerTest {
 
     @Test
     public void assertTest() {
-        assertThrows(AssertException.class, () -> ReplaceStringMasker.builder().build());
+        assertThrows(IllegalArgumentException.class, () -> ReplaceStringMasker.builder().build());
     }
 }

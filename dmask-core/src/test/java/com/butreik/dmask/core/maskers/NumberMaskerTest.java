@@ -1,6 +1,5 @@
 package com.butreik.dmask.core.maskers;
 
-import com.butreik.dmask.core.validate.AssertException;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -24,9 +23,9 @@ public class NumberMaskerTest {
 
     @Test
     public void assertTest() {
-        assertThrows(AssertException.class, () -> NumberMasker.builder().build());
-        assertThrows(AssertException.class, () -> NumberMasker.builder().name(" ").build());
-        assertThrows(AssertException.class, () ->
+        assertThrows(IllegalArgumentException.class, () -> NumberMasker.builder().build());
+        assertThrows(IllegalArgumentException.class, () -> NumberMasker.builder().name(" ").build());
+        assertThrows(IllegalArgumentException.class, () ->
                 NumberMasker.builder().name("TestName").replacementNumber(null).build());
     }
 }

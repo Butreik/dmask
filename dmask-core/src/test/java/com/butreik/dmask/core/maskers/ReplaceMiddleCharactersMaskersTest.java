@@ -1,6 +1,5 @@
 package com.butreik.dmask.core.maskers;
 
-import com.butreik.dmask.core.validate.AssertException;
 import org.junit.jupiter.api.Test;
 
 import static java.util.Collections.singleton;
@@ -66,10 +65,10 @@ public class ReplaceMiddleCharactersMaskersTest {
 
     @Test
     public void assertTest() {
-        assertThrows(AssertException.class, () -> ReplaceMiddleCharactersMaskers.builder().build());
-        assertThrows(AssertException.class, () ->
+        assertThrows(IllegalArgumentException.class, () -> ReplaceMiddleCharactersMaskers.builder().build());
+        assertThrows(IllegalArgumentException.class, () ->
                 ReplaceMiddleCharactersMaskers.builder().name("TestName").from(-1).build());
-        assertThrows(AssertException.class, () ->
+        assertThrows(IllegalArgumentException.class, () ->
                 ReplaceMiddleCharactersMaskers.builder().name("TestName").from(5).to(2).build());
     }
 }
