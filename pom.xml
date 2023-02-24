@@ -24,7 +24,7 @@
 
     <developers>
         <developer>
-            <id>author</id>
+            <id>Butreik</id>
             <name>Vladimir Rudnev</name>
             <email>butreik@gmail.com</email>
         </developer>
@@ -200,15 +200,6 @@
                             <goals>deploy</goals>
                         </configuration>
                     </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-deploy-plugin</artifactId>
-                        <version>${maven-deploy-plugin.version}</version>
-                        <configuration>
-                            <retryFailedDeploymentCount>5</retryFailedDeploymentCount>
-                            <deployAtEnd>true</deployAtEnd>
-                        </configuration>
-                    </plugin>
                 </plugins>
             </build>
         </profile>
@@ -234,6 +225,7 @@
         <maven.compiler.testTarget>${jdk-test.version}</maven.compiler.testTarget>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+        <nexus-staging-maven-plugin.version>1.6.13</nexus-staging-maven-plugin.version>
         <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
         <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
