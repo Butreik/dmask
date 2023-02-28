@@ -1,7 +1,5 @@
 package com.butreik.dmask.core;
 
-import com.butreik.dmask.core.maskers.Masker;
-
 import static com.butreik.dmask.core.Assert.assertNotEmpty;
 import static com.butreik.dmask.core.Assert.assertNotNull;
 
@@ -20,9 +18,9 @@ public class Filter {
     /**
      * The masker used to apply the mask to the filtered data.
      */
-    private final Masker<?> masker;
+    private final Masker masker;
 
-    private Filter(String jsonPath, Masker<?> masker) {
+    private Filter(String jsonPath, Masker masker) {
         assertNotEmpty(jsonPath);
         assertNotNull(masker);
         this.jsonPath = jsonPath;
@@ -52,7 +50,7 @@ public class Filter {
      *
      * @return the masker.
      */
-    public Masker<?> getMasker() {
+    public Masker getMasker() {
         return masker;
     }
 
@@ -61,7 +59,7 @@ public class Filter {
      */
     public static class Builder {
         private String jsonPath;
-        private Masker<?> masker;
+        private Masker masker;
 
         private Builder() {
         }
@@ -83,8 +81,19 @@ public class Filter {
          * @param masker the masker to set.
          * @return the builder.
          */
-        public Builder masker(Masker<?> masker) {
+        public Builder masker(Masker masker) {
             this.masker = masker;
+            return this;
+        }
+
+        /**
+         * Sets the masker used to apply the mask to the filtered data.
+         *
+         * @param mapFunction the map function to set.
+         * @return the builder.
+         */
+        public Builder masker(MapFunction mapFunction) {
+            this.masker = Masker.builder().mapFunction(mapFunction).build();
             return this;
         }
 

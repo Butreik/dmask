@@ -1,0 +1,18 @@
+json-mask:
+  maskers:
+    secret-masker:
+      - $..secret
+      - $..password
+    except-first-character-masker:
+      - $..login
+    remove-masker:
+      - $..documents
+    number-masker:
+      - $..id
+      - $..amount
+    phone-masker:
+      - $..phone
+    email-masker:
+      - $..email
+    iso-local-date-masker:
+      - $..birthday

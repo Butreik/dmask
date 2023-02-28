@@ -1,10 +1,11 @@
-package com.butreik.dmask.core.validate;
+package com.butreik.dmask.core;
 
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.butreik.dmask.core.Assert.assertKebabCase;
 import static com.butreik.dmask.core.Assert.assertNotEmpty;
 import static com.butreik.dmask.core.Assert.assertNotNull;
 import static com.butreik.dmask.core.Assert.assertTrue;
@@ -18,6 +19,9 @@ public class AssertTest {
         assertNotNull(new Object());
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> assertNotNull(null));
         assertEquals("Object required to be not null", exception.getMessage());
+        assertNotNull(new Object(), () -> "message");
+        exception = assertThrows(IllegalArgumentException.class, () -> assertNotNull(null, () -> "message"));
+        assertEquals("message", exception.getMessage());
     }
 
     @Test
@@ -28,6 +32,35 @@ public class AssertTest {
         assertEquals("String must be not null and not empty", exception.getMessage());
         exception = assertThrows(IllegalArgumentException.class, () -> assertNotEmpty(" "));
         assertEquals("String must be not null and not empty", exception.getMessage());
+    }
+
+    @Test
+    public void assertKebabCaseTest() {
+        assertKebabCase("kebab-case", () -> "message");
+
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
+                () -> assertKebabCase("KEBAB_CASE", () -> "message"));
+        assertEquals("message", exception.getMessage());
+
+        exception = assertThrows(IllegalArgumentException.class,
+                () -> assertKebabCase("KebabCase", () -> "message"));
+        assertEquals("message", exception.getMessage());
+
+        exception = assertThrows(IllegalArgumentException.class,
+                () -> assertKebabCase("kebabCase", () -> "message"));
+        assertEquals("message", exception.getMessage());
+
+        exception = assertThrows(IllegalArgumentException.class,
+                () -> assertKebabCase("kebab_case", () -> "message"));
+        assertEquals("message", exception.getMessage());
+
+        exception = assertThrows(IllegalArgumentException.class,
+                () -> assertKebabCase("kebab case", () -> "message"));
+        assertEquals("message", exception.getMessage());
+
+        exception = assertThrows(IllegalArgumentException.class,
+                () -> assertKebabCase("Kebab Case", () -> "message"));
+        assertEquals("message", exception.getMessage());
     }
 
     @Test

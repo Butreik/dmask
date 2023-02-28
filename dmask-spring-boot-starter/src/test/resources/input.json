@@ -1,0 +1,18 @@
+{
+  "id": 15,
+  "phone": "+123456789123",
+  "email": "prefix@domain.com",
+  "amount": 3.14,
+  "birthday": "1990-10-10",
+  "login" : "userlogin",
+  "password": "Qwerty123",
+  "anyField": "value",
+  "documents": [
+    {
+      "id": 123
+    },
+    {
+      "id": 234
+    }
+  ]
+}
