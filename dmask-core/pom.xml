@@ -3,11 +3,11 @@
     <parent>
         <groupId>com.butreik.dmask</groupId>
         <artifactId>dmask</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>dmask-core</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <name>dmask-core</name>
     <description>dmask-core</description>

@@ -3,11 +3,11 @@
     <parent>
         <groupId>com.butreik.dmask</groupId>
         <artifactId>dmask</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>dmask-spring-boot-starter</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <name>dmask-spring-boot-starter</name>
     <description>dmask-spring-boot-starter</description>
