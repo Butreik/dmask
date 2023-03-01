@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.butreik.dmask</groupId>
     <artifactId>dmask</artifactId>
-    <version>0.1.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
@@ -34,7 +34,7 @@
         <developerConnection>scm:git:git@github.com:butreik/dmask.git</developerConnection>
         <connection>scm:git:git@github.com:butreik/dmask.git</connection>
         <url>http://github.com/butreik/dmask/tree/main</url>
-      <tag>HEAD</tag>
+      <tag>dmask-1.0.0</tag>
   </scm>
 
     <repositories>
@@ -50,12 +50,12 @@
             <dependency>
                 <groupId>com.butreik.dmask</groupId>
                 <artifactId>dmask-core</artifactId>
-                <version>0.1.1-SNAPSHOT</version>
+                <version>1.0.0</version>
             </dependency>
             <dependency>
                 <groupId>com.butreik.dmask</groupId>
                 <artifactId>dmask-spring-boot-starter</artifactId>
-                <version>0.1.1-SNAPSHOT</version>
+                <version>1.0.0</version>
             </dependency>
             <dependency>
                 <groupId>com.jayway.jsonpath</groupId>
