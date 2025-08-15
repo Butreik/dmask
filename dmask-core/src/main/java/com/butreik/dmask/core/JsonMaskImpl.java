@@ -255,7 +255,7 @@ public class JsonMaskImpl implements JsonMask {
              * @return the builder instance
              */
             private FiltersBuilder masker(MapFunction mapFunction) {
-                assertNotNull(masker);
+                assertNotNull(mapFunction);
                 this.masker = Masker.builder().mapFunction(mapFunction).build();
                 return this;
             }
